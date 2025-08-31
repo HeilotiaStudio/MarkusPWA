@@ -91,32 +91,29 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-         window.AddToHomeScreenInstance = window.AddToHomeScreen({
-          appName: 'Markuss',                                   // Name of the app.
-                                                                 // Required.
-          appNameDisplay: 'standalone',                          // If set to 'standalone' (the default), the app name will be diplayed
-                                                                 // on it's own, beneath the "Install App" header. If set to 'inline', the
-                                                                 // app name will be displayed on a single line like "Install MyApp"
-                                                                 // Optional. Default 'standalone'
-          appIconUrl: 'apple-touch-icon.png',                    // App icon link (square, at least 40 x 40 pixels).
-                                                                 // Required.
-          assetUrl: 'https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@2.91/dist/assets/img/',  // Link to directory of library image assets.
-        
-          maxModalDisplayCount: -1,                              // If set, the modal will only show this many times.
-                                                                 // [Optional] Default: -1 (no limit).  (Debugging: Use this.clearModalDisplayCount() to reset the count)
-          displayOptions:{ showMobile: true, showDesktop: true } // show on mobile/desktop [Optional] Default: show everywhere
-        
-        });
-        
-         ret = window.AddToHomeScreenInstance.show('en');        // show "add-to-homescreen" instructions to user, or do nothing if already added to homescreen
-                                                                 // [optional] language.  If left blank, then language is auto-decided from (1) URL param locale='..' (e.g. /?locale=es) (2) Browser language settings
-        });
-        </script>
+   <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.AddToHomeScreenInstance = window.AddToHomeScreen({
+      appName: 'Markuss',
+      appNameDisplay: 'standalone',
+      appIconUrl: 'apple-touch-icon.png',
+      assetUrl: 'https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@2.91/dist/assets/img/',
+      maxModalDisplayCount: -1,
+      displayOptions: { showMobile: true, showDesktop: true }
+    });
+
+    // 🔄 Reset modal display count for testing
+    window.AddToHomeScreenInstance.clearModalDisplayCount();
+
+    // 🚀 Show the install prompt
+    window.AddToHomeScreenInstance.show('en');
+  });
+</script
+
 </body>
 
 </html>
+
 
 
 
