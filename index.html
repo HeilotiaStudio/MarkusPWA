@@ -15,26 +15,77 @@
   <script src="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@2.91/dist/add-to-homescreen.min.js"></script>
   </head>
   <body>
-    <style>
-      /* Ensure the iframe takes full height and width */
-      .iframe-card {
-        height: 100vh; /* Full screen height */
-      }
-  
-      .iframe-card iframe {
-        width: 100%; /* Full screen width */
-        height: 100%; /* Full screen height */
-      }
-    </style>
-    
-    <div class="container-fluid">
-      <div class="card iframe-card">
-        <div class="card-body p-0">
-          <!-- Fullscreen iframe inside the card -->
-          <iframe src="https://github.com/HeilotiaStudio/MarkusPWA/main/app1.html" frameborder="0"></iframe>
+     <div id="cookie-banner" style="background:#eee; padding:10px; text-align:center; display:none;">
+  We use cookies to improve your experience. 🍪
+  <button onclick="acceptCookies()">Got it!</button>
+</div>
+
+
+<center><h1>Welcome!</h1></center>
+<h3 style="text-align: center;">This is my page</h3>
+<p>This is a book about a love story</p>
+
+<div class="section">
+  <a href="https://www.youtube.com/embed/koUGIDvxrqs?si=OfX74sV9FcPQz-RD" target="_blank" rel="noopener">
+    <button class="styled-button">
+      Click Me
+    </button>
+  </a>
+</div>
+
+<div class="container py-4">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+    <div class="col">
+      <div class="card h-100">
+        <img src="Beast.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card Title</h5>
+          <p class="card-text">Some quick example text.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
       </div>
     </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="Beast.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Another Card</h5>
+          <p class="card-text">More sample content here.</p>
+          <a href="#" class="btn btn-success">Click me</a>
+        </div>
+      </div>
+    </div>
+    <!-- Add more cards as needed -->
+<div class="col">
+  <a href="https://www.facebook.com/Heilotia" class="text-decoration-none text-dark">
+    <div class="card h-100">
+      <img src="Beast.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card Title</h5>
+        <p class="card-text">Some quick example text.</p>
+        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+        <span class="stretched-link"></span>
+      </div>
+    </div>
+  </a>
+</div>
+
+
+
+
+        <!-- Add more cards as needed -->
+  </div>
+</div>
+
+<script src="cookie.js"></script>
+
+<footer>
+    <p>
+  Author: Tales of Heilotia — 
+  <a href="https://www.youtube.com/@TalesOfHeilotia"> My Youtube</a>
+</p>
+</footer>
+  </body>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -66,5 +117,6 @@
 </body>
 
 </html>
+
 
 
