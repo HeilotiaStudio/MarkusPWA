@@ -1,5 +1,12 @@
-// Request permission when the page loads
 document.addEventListener('DOMContentLoaded', () => {
+  const carElement = document.getElementById('car-element');
+
+  if (!carElement) {
+    console.error('Element #car-element not found!');
+    return;
+  }
+
+  // Request notification permission
   if ('Notification' in window) {
     Notification.requestPermission().then(permission => {
       console.log('Notification permission:', permission);
@@ -8,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Wait 10 seconds AFTER permission is granted
         setTimeout(() => {
           // Show the hover element
-          document.getElementById('car-element').style.display = 'block';
+          carElement.style.display = 'block';
 
           // Trigger welcome notification
           new Notification('Hey there!', {
@@ -19,17 +26,19 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // Trigger notification on hover
+  carElement.addEventListener('mouseenter', () => {
+    if (Notification.permission === 'granted') {
+      new Notification('Check out this!', {
+        body: 'Click to learn more.',
+        icon: 'apple-touch-icon.png'
+      });
+    }
+  });
 });
 
-// Trigger notification on hover
-document.getElementById('car-element').addEventListener('mouseenter', () => {
-  if (Notification.permission === 'granted') {
-    new Notification('Check out this!', {
-      body: 'Click to learn more.',
-      icon: 'apple-touch-icon.png'
-    });
-  }
-});
+
 
 
 
