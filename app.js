@@ -1,5 +1,4 @@
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {
     // Initialize the Add to Home Screen prompt
     window.AddToHomeScreenInstance = window.AddToHomeScreen({
       appName: 'Markuss',
@@ -19,7 +18,8 @@
       alert('Install prompt reset. Reload the page to test again.');
     };
   });
-</script>
+
+
 
 
 
