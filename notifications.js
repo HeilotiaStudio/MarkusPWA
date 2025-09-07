@@ -22,21 +22,21 @@ document.addEventListener('DOMContentLoaded', () => {
             body: 'Thanks for visiting our app.',
             icon: 'apple-touch-icon.png'
           });
+
+          // ✅ Attach hover listener AFTER element is visible
+          carElement.addEventListener('mouseenter', () => {
+            new Notification('Check out this!', {
+              body: 'Click to learn more.',
+              icon: 'apple-touch-icon.png'
+            });
+          });
         }, 10000);
       }
     });
   }
-
-  // Trigger notification on hover
-  carElement.addEventListener('mouseenter', () => {
-    if (Notification.permission === 'granted') {
-      new Notification('Check out this!', {
-        body: 'Click to learn more.',
-        icon: 'apple-touch-icon.png'
-      });
-    }
-  });
 });
+
+
 
 
 
