@@ -1,52 +1,48 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const modal = document.getElementById('car-modal');
-  const closeBtn = document.querySelector('.close-btn');
+  const toast = document.getElementById('car-toast');
+  const closeBtn = toast?.querySelector('.close-btn');
 
-  if (!modal) {
-    console.error('Element #car-modal not found!');
+  if (!toast) {
+    console.error('Element #car-toast not found!');
     return;
   }
 
-  // Request notification permission
+  // Ask for browser notification permission
   if ('Notification' in window) {
     Notification.requestPermission().then(permission => {
       console.log('Notification permission:', permission);
 
       if (permission === 'granted') {
-        // Wait 5 seconds AFTER permission is granted
+        // Show toast 5s after permission granted
         setTimeout(() => {
-          console.log('Showing modal...');
-          modal.style.display = 'flex'; // use flex for alignment
+          console.log('Showing toast...');
+          toast.style.display = 'block';
 
-          // Trigger welcome notification
+          // Trigger native browser notification as well
           new Notification('Hey there!', {
             body: 'Thanks for visiting our app.',
             icon: 'apple-touch-icon.png'
           });
 
-          // Auto-hide modal after 7s
+          // Auto-hide toast after 5s
           setTimeout(() => {
-            modal.style.display = 'none';
-          }, 7000);
-
+            toast.style.display = 'none';
+          }, 5000);
         }, 5000);
-      } else {
-        console.warn('Notifications not granted');
       }
     }).catch(err => {
       console.error('Permission request failed:', err);
     });
-  } else {
-    console.warn('Notifications not supported in this browser');
   }
 
-  // Close modal when clicking the X
+  // Close toast when clicking the X
   if (closeBtn) {
     closeBtn.addEventListener('click', () => {
-      modal.style.display = 'none';
+      toast.style.display = 'none';
     });
   }
 });
+
 
 
 
