@@ -12,7 +12,7 @@ setTimeout(() => {
   if (Notification.permission === 'granted') {
     new Notification('Hey there!', {
       body: 'Thanks for visiting our app.',
-      icon: '/images/car-icon.png' // Make sure this path is correct
+      icon: 'apple-touch-icon.png' // Make sure this path is correct
     });
   }
 }, 10000);
@@ -20,9 +20,9 @@ setTimeout(() => {
 // Trigger notification on hover
 document.getElementById('car-element').addEventListener('mouseenter', () => {
   if (Notification.permission === 'granted') {
-    new Notification('Check out this car!', {
+    new Notification('Check out this!', {
       body: 'Click to learn more.',
-      icon: '/images/car-icon.png'
+      icon: 'apple-touch-icon.png'
     });
   }
 });
