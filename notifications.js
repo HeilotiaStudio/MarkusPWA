@@ -16,13 +16,19 @@ document.addEventListener('DOMContentLoaded', () => {
         // Wait 5 seconds AFTER permission is granted
         setTimeout(() => {
           console.log('Showing modal...');
-          modal.style.display = 'block';
+          modal.style.display = 'flex'; // use flex for alignment
 
           // Trigger welcome notification
           new Notification('Hey there!', {
             body: 'Thanks for visiting our app.',
             icon: 'apple-touch-icon.png'
           });
+
+          // Auto-hide modal after 7s
+          setTimeout(() => {
+            modal.style.display = 'none';
+          }, 7000);
+
         }, 5000);
       } else {
         console.warn('Notifications not granted');
