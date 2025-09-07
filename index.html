@@ -50,17 +50,28 @@
     </div>
   </nav>
 
+ <style>
+    #car-element {
+      display: none; /* Hidden by default */
+      width: 200px;
+      height: 100px;
+      background: #ccc;
+      text-align: center;
+      line-height: 100px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+  </style>
+
 
      <div id="cookie-banner" style="background:#eee; padding:10px; text-align:center; display:none;">
   We use cookies to improve your experience. 🍪
   <button onclick="acceptCookies()">Got it!</button>
 </div>
- <div id="car-element" style="width:200px; height:100px; background:#ccc; text-align:center; line-height:100px; cursor:pointer;">
-    Hover over me 🚗
-  </div>
+    
+  <div id="car-element">Hover over me 🚗</div>
 
-  <!-- Hidden trigger element -->
-  <div id="notification-trigger" style="display: none;"></div>
+
 
 
 
@@ -142,6 +153,7 @@
 </body>
 
 </html>
+
 
 
 
