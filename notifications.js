@@ -1,13 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const carElement = document.getElementById('car-element');
+  const modal = document.getElementById('car-modal');
+  const closeBtn = document.querySelector('.close-btn');
 
-  if (!carElement) {
-    console.error('Element #car-element not found!');
+  if (!modal) {
+    console.error('Element #car-modal not found!');
     return;
   }
-
-  // Hide the element initially
-  carElement.style.display = 'none';
 
   // Request notification permission
   if ('Notification' in window) {
@@ -15,17 +13,17 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log('Notification permission:', permission);
 
       if (permission === 'granted') {
-        // Wait 10 seconds AFTER permission is granted
+        // Wait 5 seconds AFTER permission is granted
         setTimeout(() => {
-          console.log('Showing car element...');
-          carElement.style.display = 'block';
+          console.log('Showing modal...');
+          modal.style.display = 'block';
 
           // Trigger welcome notification
           new Notification('Hey there!', {
             body: 'Thanks for visiting our app.',
             icon: 'apple-touch-icon.png'
           });
-        }, 10000);
+        }, 5000);
       } else {
         console.warn('Notifications not granted');
       }
@@ -35,7 +33,16 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     console.warn('Notifications not supported in this browser');
   }
+
+  // Close modal when clicking the X
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+  }
 });
+
+
 
 
 
