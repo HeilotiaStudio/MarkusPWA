@@ -1,3 +1,4 @@
+<script>
 document.addEventListener('DOMContentLoaded', function () {
     // Initialize the Add to Home Screen prompt
     window.AddToHomeScreenInstance = window.AddToHomeScreen({
@@ -18,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
       alert('Install prompt reset. Reload the page to test again.');
     };
   });
+<\script>
 
 
 
