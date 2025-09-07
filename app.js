@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
       appNameDisplay: 'standalone',
       appIconUrl: 'apple-touch-icon.png',
       assetUrl: 'https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@2.91/dist/assets/img/',
-      maxModalDisplayCount: 1,
+      maxModalDisplayCount: 3,
       displayOptions: { showMobile: true, showDesktop: true }
     });
 
@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
       alert('Install prompt reset. Reload the page to test again.');
     };
   });
+
 
 
 
