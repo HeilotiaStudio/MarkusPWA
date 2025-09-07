@@ -1,14 +1,16 @@
+// Request permission when the page loads
 document.addEventListener('DOMContentLoaded', () => {
   if ('Notification' in window) {
     Notification.requestPermission().then(permission => {
       console.log('Notification permission:', permission);
 
       if (permission === 'granted') {
-        // Delay 10 seconds, then reveal trigger
+        // Wait 10 seconds AFTER permission is granted
         setTimeout(() => {
-          document.getElementById('notification-trigger').style.display = 'block';
+          // Show the hover element
+          document.getElementById('car-element').style.display = 'block';
 
-          // Now trigger the welcome notification
+          // Trigger welcome notification
           new Notification('Hey there!', {
             body: 'Thanks for visiting our app.',
             icon: 'apple-touch-icon.png'
@@ -19,17 +21,17 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// Trigger notification on hover — only if trigger is visible
+// Trigger notification on hover
 document.getElementById('car-element').addEventListener('mouseenter', () => {
-  const triggerVisible = document.getElementById('notification-trigger').style.display === 'block';
-
-  if (Notification.permission === 'granted' && triggerVisible) {
+  if (Notification.permission === 'granted') {
     new Notification('Check out this!', {
       body: 'Click to learn more.',
       icon: 'apple-touch-icon.png'
     });
   }
 });
+
+
 
 
 
