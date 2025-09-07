@@ -1,4 +1,3 @@
-// Request permission when the page loads
 document.addEventListener('DOMContentLoaded', () => {
   if ('Notification' in window) {
     Notification.requestPermission().then(permission => {
