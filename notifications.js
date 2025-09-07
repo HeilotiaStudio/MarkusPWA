@@ -1,47 +1,57 @@
 document.addEventListener('DOMContentLoaded', () => {
   const toast = document.getElementById('car-toast');
-  const closeBtn = toast?.querySelector('.close-btn');
+  const closeBtn = toast.querySelector('.close-btn');
 
-  if (!toast) {
-    console.error('Element #car-toast not found!');
-    return;
+  // Helper to show toast
+  function showToast() {
+    toast.style.display = 'flex';
+    toast.style.opacity = '1';
+    toast.style.transform = 'translateY(0)';
+
+    // Auto-hide after 5 seconds
+    setTimeout(() => {
+      toast.style.opacity = '0';
+      toast.style.transform = 'translateY(-10px)';
+      setTimeout(() => {
+        toast.style.display = 'none';
+      }, 300);
+    }, 5000);
   }
 
   // Ask for browser notification permission
   if ('Notification' in window) {
     Notification.requestPermission().then(permission => {
-      console.log('Notification permission:', permission);
-
       if (permission === 'granted') {
-        // Show toast 5s after permission granted
         setTimeout(() => {
-          console.log('Showing toast...');
-          toast.style.display = 'block';
+          // Show toast
+          showToast();
 
-          // Trigger native browser notification as well
+          // Trigger native browser notification
           new Notification('Hey there!', {
             body: 'Thanks for visiting our app.',
             icon: 'apple-touch-icon.png'
           });
-
-          // Auto-hide toast after 5s
-          setTimeout(() => {
-            toast.style.display = 'none';
-          }, 5000);
-        }, 5000);
+        }, 2000); // 2s delay before showing
+      } else {
+        // If denied, still show the small toast
+        setTimeout(showToast, 2000);
       }
-    }).catch(err => {
-      console.error('Permission request failed:', err);
-    });
+    }).catch(err => console.error('Notification permission error:', err));
+  } else {
+    // If browser doesn't support notifications, just show toast
+    setTimeout(showToast, 2000);
   }
 
-  // Close toast when clicking the X
-  if (closeBtn) {
-    closeBtn.addEventListener('click', () => {
+  // Close button
+  closeBtn.addEventListener('click', () => {
+    toast.style.opacity = '0';
+    toast.style.transform = 'translateY(-10px)';
+    setTimeout(() => {
       toast.style.display = 'none';
-    });
-  }
+    }, 300);
+  });
 });
+
 
 
 
