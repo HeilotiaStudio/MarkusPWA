@@ -34,52 +34,60 @@ body {
   transform: translateX(-50%);
   width: 300px;
   height: 150px;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: #fff;
   z-index: 1000;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
   border-radius: 8px;
   overflow: hidden;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
-/* Modal content box */
+/* Modal content */
 .modal-content {
-  padding: 15px;
   height: 100%;
-  box-sizing: border-box;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   position: relative;
+  text-align: center;
 }
 
 /* Close button */
 .close-btn {
   position: absolute;
-  top: 8px;
+  top: 5px;
   right: 10px;
   font-size: 18px;
   cursor: pointer;
 }
 
-/* Image styling */
+/* Image */
 .modal-img {
   width: 40px;
+  height: auto;
+  margin-bottom: 6px;
+}
+
+/* Text */
+.modal-text {
+  font-size: 0.95em;
   margin-bottom: 8px;
 }
 
-/* Text and button */
-.modal-text {
-  font-size: 1em;
-  margin-bottom: 10px;
-}
-
+/* Button */
 .modal-btn {
   padding: 6px 12px;
-  font-size: 0.9em;
+  font-size: 0.85em;
   background-color: #0078D4;
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
+
+
 
 
 
