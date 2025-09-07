@@ -50,18 +50,7 @@
     </div>
   </nav>
 
- <style>
-    #car-element {
-      display: none; /* Hidden by default */
-      width: 200px;
-      height: 100px;
-      background: #ccc;
-      text-align: center;
-      line-height: 100px;
-      cursor: pointer;
-      margin-top: 20px;
-    }
-  </style>
+ 
 
 
      <div id="cookie-banner" style="background:#eee; padding:10px; text-align:center; display:none;">
@@ -69,13 +58,16 @@
   <button onclick="acceptCookies()">Got it!</button>
 </div>
     
-  <div id="car-element" style="display: none; text-align: center; padding: 20px;">
-  <img src="apple-touch-icon.png" alt="Welcome Icon" style="width: 80px; height: auto; margin-bottom: 10px;">
-  <div style="font-size: 1.2em; margin-bottom: 10px;">Thank you for visiting!</div>
-  <button onclick="alert('More info coming soon!')" style="padding: 8px 16px; font-size: 1em; cursor: pointer;">
-    Learn More
-  </button>
+<div id="car-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <img src="apple-touch-icon.png" alt="Welcome Icon" class="modal-img">
+    <div class="modal-text">Thank you for visiting!</div>
+    <button class="modal-btn">Learn More</button>
+  </div>
 </div>
+
+
 
 
 
@@ -161,6 +153,7 @@
 </body>
 
 </html>
+
 
 
 
