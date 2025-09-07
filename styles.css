@@ -25,101 +25,84 @@ body {
   padding-top: 70px;
 }
 
-/* Modal base */
+/* Modal wrapper (transparent background, fixed to screen) */
 .modal {
-  display: none;
+  display: none; 
   position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 300px;
-  height: 150px;
-  background-color: #fff;
+  top: 20px; /* near top */
+  right: 20px; /* near right */
   z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  border-radius: 8px;
-  overflow: hidden;
-  padding: 10px;
-  box-sizing: border-box;
+  justify-content: flex-end;
+  align-items: flex-start;
 }
 
-/* Overlay hidden by default */
-.modal {
-  display: none; /* set to flex/block when you want it visible */
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 1000;
-}
-
-/* Notification style box */
+/* Small notification box */
 .modal-content {
   background: #fff;
   color: #333;
-  width: 320px;           /* small width */
   padding: 15px 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  position: relative;
-  animation: fadeInUp 0.3s ease;
-}
-
-/* Small image */
-.modal-img {
-  width: 40px;
-  height: 40px;
   border-radius: 8px;
-  flex-shrink: 0;
-}
-
-/* Text */
-.modal-text {
-  flex: 1;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  width: 280px;      /* compact width */
+  max-width: 90vw;   /* don’t overflow small screens */
   font-size: 14px;
-  line-height: 1.4;
+  position: relative;
+  animation: slideIn 0.4s ease;
 }
 
-/* Close button */
+/* Close button (X) */
 .close-btn {
   position: absolute;
   top: 6px;
   right: 8px;
-  font-size: 16px;
+  font-size: 18px;
   cursor: pointer;
-  color: #999;
-}
-.close-btn:hover {
-  color: #333;
+  color: #666;
 }
 
-/* Small button */
+/* Image inside */
+.modal-img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+/* Text */
+.modal-text {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+/* Button */
 .modal-btn {
-  background: #0078d4;
+  background: #0078ff;
   color: #fff;
   border: none;
   padding: 6px 12px;
-  font-size: 13px;
-  border-radius: 6px;
+  border-radius: 4px;
   cursor: pointer;
+  font-size: 13px;
 }
 .modal-btn:hover {
-  background: #005fa3;
+  background: #005fcc;
 }
 
-/* Animation */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+/* Slide-in animation */
+@keyframes slideIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(-20px); 
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
   }
 }
+
+
+
+
 
 
 
