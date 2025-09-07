@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
-  // Hide it initially
+  // Hide the element initially
   carElement.style.display = 'none';
 
   // Request notification permission
@@ -19,15 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
           console.log('Showing car element...');
           carElement.style.display = 'block';
-
-          // Attach hover listener AFTER it's visible
-          carElement.addEventListener('mouseenter', () => {
-            console.log('Hover detected');
-            new Notification('Check out this!', {
-              body: 'Click to learn more.',
-              icon: 'apple-touch-icon.png'
-            });
-          });
 
           // Trigger welcome notification
           new Notification('Hey there!', {
@@ -45,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.warn('Notifications not supported in this browser');
   }
 });
+
 
 
 
