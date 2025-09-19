@@ -16,13 +16,16 @@ document.getElementById("subscribeBtn").addEventListener("click", async () => {
 
   try {
     // Register the service worker
-    const register = await navigator.serviceWorker.register("/MarkusPWA/sw.js"); // path must match repo folder
+    const register = await navigator.serviceWorker.register("/MarkusPWA/sw.js", {
+      scope: "/MarkusPWA/"
+    });
 
-    // Wait for service worker to be active
+    // Wait for service worker to be activated
     if (register.installing) {
       await new Promise(resolve => {
-        register.installing.addEventListener("statechange", function () {
-          if (this.state === "activated") resolve();
+        const worker = register.installing;
+        worker.addEventListener("statechange", () => {
+          if (worker.state === "activated") resolve();
         });
       });
     }
@@ -55,4 +58,5 @@ document.getElementById("subscribeBtn").addEventListener("click", async () => {
     console.error("Service Worker registration or push subscription failed:", err);
   }
 });
+
 
