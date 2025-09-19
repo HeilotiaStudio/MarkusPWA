@@ -4,7 +4,7 @@ const publicVapidKey = "BOZPCDN7K2Lrc_FY1ROTtHwTNYt6aWPrLtXyGgzE7rIJ90z33IH0xBNd
 document.getElementById("subscribeBtn").addEventListener("click", async () => {
   if ("serviceWorker" in navigator) {
     const register = await navigator.serviceWorker.register("sw.js", {
-      scope: "/"
+      scope: "/MarkusPWA/"
     });
 
     const permission = await Notification.requestPermission();
