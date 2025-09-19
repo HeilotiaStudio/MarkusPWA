@@ -1,4 +1,4 @@
-const publicVapidKey = "YOUR_VAPID_PUBLIC_KEY"; // same as in Netlify env
+const publicVapidKey = "BOZPCDN7K2Lrc_FY1ROTtHwTNYt6aWPrLtXyGgzE7rIJ90z33IH0xBNd2RZhr1-pQIb960_52-qCyUGwMhT5taM"; // same as in Netlify env
 
 // Register Service Worker & ask permission
 document.getElementById("subscribeBtn").addEventListener("click", async () => {
