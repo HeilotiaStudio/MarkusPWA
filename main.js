@@ -43,7 +43,7 @@ document.getElementById("subscribeBtn").addEventListener("click", async () => {
     console.log("Subscription:", subscription);
 
     // Send subscription to backend (Netlify Function)
-    await fetch("https://pushmarkussapp.netlify.app/netlify/functions/send-push", {
+    await fetch("https://pushmarkussapp.netlify.app/.netlify/functions/send-push", {
       method: "POST",
       body: JSON.stringify(subscription),
       headers: { "Content-Type": "application/json" }
