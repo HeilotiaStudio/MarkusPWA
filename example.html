@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Simple Tooltip Example</title>
+<title>Tooltip with Video Example</title>
 <style>
   .my-tooltip {
     position: relative;
     display: inline-block;
     cursor: pointer;
-    font-size: 20px; /* make text visible */
+    font-size: 20px;
     color: black;
   }
 
   .my-tooltip .my-tooltiptext {
     visibility: hidden;
-    width: 140px;
+    width: 200px;
     background-color: black;
     color: #fff;
     text-align: center;
@@ -34,6 +34,13 @@
     visibility: visible;
     opacity: 1;
   }
+
+  iframe {
+    margin-top: 30px;
+    width: 560px;
+    height: 315px;
+    border: none;
+  }
 </style>
 </head>
 <body>
@@ -44,7 +51,12 @@
   <span class="my-tooltiptext">Hello! I'm a tooltip.</span>
 </div>
 
+<!-- Video iframe -->
+<iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+
 </body>
 </html>
+
+
 
 
