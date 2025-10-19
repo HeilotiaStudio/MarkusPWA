@@ -45,25 +45,51 @@
 </style>
 
   
- 
-<style>
-.move-text {
-  font-size: 24px;
-  position: absolute;
-  white-space: nowrap;
-  animation: slideAcross 10s linear infinite;
-}
+ <style>
+    /* container hides overflow so text appears/disappears at edges */
+    .ticker-wrap {
+      position: relative;
+      width: 100%;
+      height: 48px;
+      overflow: hidden;
+      background: #111;
+      display: flex;
+      align-items: center;
+    }
 
-@keyframes slideAcross {
-  0% { left: -200px; opacity: 0; }
-  10% { opacity: 1; }
-  90% { opacity: 1; }
-  100% { left: 100%; opacity: 0; }
-}
-</style>
+    /* the text that will slide */
+    .ticker {
+      position: absolute;
+      white-space: nowrap;         /* keep it on one line */
+      font-size: 20px;
+      color: white;
+      padding-left: 20px;
+      /* start off-screen on the right, then go fully off-screen on the left */
+      transform: translateX(100%);
+      animation: slide-left 10s linear infinite;
+    }
+
+    @keyframes slide-left {
+      from {
+        transform: translateX(100%);   /* start just outside right edge */
+      }
+      to {
+        transform: translateX(-100%);  /* end just outside left edge */
+      }
+    }
+
+    /* optional: slower on hover */
+    .ticker-wrap:hover .ticker { animation-play-state: paused; }
+  </style>
+</head>
+<body>
+  <div class="ticker-wrap">
+    <div class="ticker">This text will slide all the way across the page — repeat: infinite!</div>
+  </div>
 
 </body>
 </html>
+
 
 
 
