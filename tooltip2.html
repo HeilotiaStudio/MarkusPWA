@@ -45,24 +45,26 @@
 </style>
 
   
-  <p class="move-text">Sliding text ➡️</p>
-
+ 
 <style>
 .move-text {
   font-size: 24px;
-  position: relative;
-  display: inline-block;
-  animation: slide 5s infinite alternate ease-in-out;
+  position: absolute;
+  white-space: nowrap;
+  animation: slideAcross 10s linear infinite;
 }
 
-@keyframes slide {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(100px); }
+@keyframes slideAcross {
+  0% { left: -200px; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { left: 100%; opacity: 0; }
 }
 </style>
 
 </body>
 </html>
+
 
 
 
